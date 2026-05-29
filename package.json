@@ -1,17 +1,14 @@
 {
   "name": "medpremium-api",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "API do Preparatório MedPremium — Inscrições",
+  "description": "API do Preparatorio MedPremium - Supabase",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
+  "scripts": { "start": "node index.js" },
   "dependencies": {
+    "@supabase/supabase-js": "^2.47.0",
     "cors": "^2.8.6",
     "express": "^5.2.1"
   },
-  "engines": {
-    "node": ">=18.0.0"
-  }
+  "engines": { "node": ">=18.0.0" }
 }
