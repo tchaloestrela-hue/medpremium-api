@@ -1043,9 +1043,8 @@
 
 <script>
 // ===== API =====
-// Backend que recebe as inscrições (o Netlify é estático, por isso aponta para o servidor).
-const BACKEND_URL = 'https://medpremium.onrender.com'
-const API_URL = BACKEND_URL + '/api/inscricoes'
+// As inscrições são tratadas por uma Netlify Function (mesma origem) com armazenamento Netlify Blobs.
+const API_URL = window.location.origin + '/api/inscricoes'
 let dadosInscricao = null
 
 // ===== FORM SUBMIT =====

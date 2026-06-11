@@ -1,7 +1,21 @@
 [build]
-  base = "website"
   publish = "website"
   command = ""
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# /api/inscricoes  ->  função inscricoes (suporta subpaths como /api/inscricoes/123)
+[[redirects]]
+  from = "/api/inscricoes"
+  to = "/.netlify/functions/inscricoes"
+  status = 200
+
+[[redirects]]
+  from = "/api/inscricoes/*"
+  to = "/.netlify/functions/inscricoes/:splat"
+  status = 200
 
 [context.production]
   environment = { NODE_ENV = "production" }
