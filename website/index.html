@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparatório MedPremium — Curso Preparatório para o Ensino Superior</title>
+<meta name="description" content="Preparatório MedPremium — De estudantes para estudantes. Preparação para Medicina, Enfermagem, Análises Clínicas, Nutrição, Fisioterapia, Biologia, Química, Agronomia, Zootecnia e mais. Inscreve-te agora!">
+<meta name="theme-color" content="#991B1B">
+<meta property="og:title" content="Preparatório MedPremium">
+<meta property="og:description" content="De estudantes para estudantes. Preparação de qualidade para ingresso no ensino superior em Angola.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red-900: #7F1D1D; --red-800: #991B1B; --red-700: #B91C1C; --red-600: #DC2626;
+    --red-100: #FEE2E2; --red-50: #FEF2F2;
+    --green-600: #16a34a; --green-50: #f0fdf4;
+    --amber-600: #d97706; --amber-50: #fffbeb;
+    --blue-600: #2563eb; --blue-50: #eff6ff;
+    --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155; --slate-600: #475569;
+    --slate-500: #64748b; --slate-400: #94a3b8; --slate-200: #e2e8f0; --slate-100: #f1f5f9; --slate-50: #f8fafc;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+    --shadow-xl: 0 16px 48px rgba(0,0,0,0.16);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--slate-800); background: var(--slate-50); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes slideRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+  @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+  @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+  .anim { opacity: 0; transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+  .anim.vis { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+  .anim-up { transform: translateY(40px); }
+  .anim-left { transform: translateX(-40px); }
+  .anim-right { transform: translateX(40px); }
+  .anim-scale { transform: scale(0.92); }
+  .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; } .delay-4 { transition-delay: 0.4s; }
+  .delay-5 { transition-delay: 0.5s; }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: rgba(127, 29, 29, 0.95); backdrop-filter: blur(12px);
+    color: #fff; padding: 0 24px; position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100; transition: all 0.3s; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .header.scrolled { background: rgba(127, 29, 29, 0.98); box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
+  .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+  .header-brand img { height: 42px; width: 42px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.25); transition: transform 0.3s; }
+  .header-brand:hover img { transform: scale(1.08); }
+  .header-brand h1 { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; }
+  .header-brand .sub { font-weight: 400; opacity: 0.6; font-size: 12px; display: block; letter-spacing: 0.5px; }
+  .header-nav { display: flex; align-items: center; gap: 4px; }
+  .header-nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 10px; border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
+  .header-nav a:hover { color: #fff; background: rgba(255,255,255,0.1); }
+  .header-cta { background: #fff; color: var(--red-800); padding: 9px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15); white-space: nowrap; }
+  .header-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, #450a0a 0%, var(--red-900) 30%, var(--red-800) 60%, var(--red-700) 100%);
+    background-size: 300% 300%; animation: gradientShift 8s ease infinite;
+    color: #fff; padding: 140px 24px 120px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(255,255,255,0.04) 0%, transparent 40%); }
+  .hero::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 80px; background: var(--slate-50); clip-path: ellipse(55% 100% at 50% 100%); }
+  .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); backdrop-filter: blur(4px); padding: 8px 18px; border-radius: 50px; font-size: 13px; font-weight: 500; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.15); animation: fadeUp 0.8s ease; }
+  .hero-tag .dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; }
+  .hero h2 { font-size: 52px; font-weight: 900; letter-spacing: -2px; margin-bottom: 20px; line-height: 1.05; animation: fadeUp 0.8s ease 0.1s both; }
+  .hero h2 em { font-style: normal; background: linear-gradient(135deg, #fca5a5, #fef08a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero p { font-size: 18px; opacity: 0.8; max-width: 600px; margin: 0 auto 36px; line-height: 1.7; animation: fadeUp 0.8s ease 0.2s both; }
+  .hero-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; animation: fadeUp 0.8s ease 0.3s both; }
+  .hero-badge { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; transition: all 0.3s; cursor: default; }
+  .hero-badge:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.8s ease 0.4s both; }
+  .hero-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--red-800); padding: 16px 36px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 16px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+  .hero-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+  .hero-btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.25); color: #fff; padding: 14px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.3s; }
+  .hero-btn-secondary:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.4); transform: translateY(-2px); }
+
+  /* ===== STATS BAR ===== */
+  .stats-bar { max-width: 1200px; margin: -50px auto 0; padding: 0 24px; position: relative; z-index: 10; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--slate-200); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-lg); }
+  .stat-item { background: #fff; padding: 28px 24px; text-align: center; }
+  .stat-num { font-size: 36px; font-weight: 900; color: var(--red-800); letter-spacing: -1px; line-height: 1; }
+  .stat-label { font-size: 13px; color: var(--slate-500); margin-top: 6px; font-weight: 500; }
+
+  /* ===== SECTION COMMONS ===== */
+  .section-header { text-align: center; margin-bottom: 48px; }
+  .section-tag { display: inline-block; background: var(--red-50); color: var(--red-800); font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .section-title { font-size: 36px; font-weight: 800; color: var(--slate-900); letter-spacing: -1px; margin-bottom: 12px; }
+  .section-sub { font-size: 16px; color: var(--slate-500); max-width: 560px; margin: 0 auto; }
+
+  /* ===== QUEM SOMOS ===== */
+  .quem-somos { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+  .quem-somos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .quem-somos-text h3 { font-size: 24px; font-weight: 800; color: var(--slate-900); margin-bottom: 16px; }
+  .quem-somos-text p { font-size: 15px; color: var(--slate-600); line-height: 1.8; margin-bottom: 14px; }
+  .quem-somos-text .destaque { background: var(--red-50); border-left: 4px solid var(--red-800); padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 20px 0; font-style: italic; color: var(--red-900); font-weight: 500; }
+  .quem-somos-img { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); position: relative; }
+  .quem-somos-img img { width: 100%; height: 400px; object-fit: cover; }
+  .quem-somos-img .caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff; padding: 20px; font-size: 13px; }
+  .quem-somos-img .caption strong { font-size: 14px; display: block; margin-bottom: 2px; }
+  .timeline { display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+  .timeline-item { flex: 1; min-width: 120px; background: var(--slate-50); border: 1px solid var(--slate-100); border-radius: 12px; padding: 14px; text-align: center; transition: all 0.3s; }
+  .timeline-item:hover { background: var(--red-50); border-color: var(--red-100); transform: translateY(-2px); }
+  .timeline-item .ano { font-size: 20px; font-weight: 800; color: var(--red-800); }
+  .timeline-item .desc { font-size: 11px; color: var(--slate-500); margin-top: 4px; line-height: 1.4; }
+
+  /* ===== MODALIDADES ===== */
+  .modalidades { padding: 80px 24px; background: #fff; border-top: 1px solid var(--slate-100); }
+  .modalidades-inner { max-width: 1200px; margin: 0 auto; }
+  .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .modal-card { border-radius: 20px; padding: 36px; position: relative; overflow: hidden; border: 2px solid var(--slate-200); transition: all 0.4s; }
+  .modal-card:hover { border-color: var(--red-800); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+  .modal-card.destaque { border-color: var(--red-800); background: linear-gradient(135deg, var(--red-50), #fff); }
+  .modal-card.destaque::before { content: 'MAIS POPULAR'; position: absolute; top: 20px; right: -30px; background: var(--red-800); color: #fff; font-size: 10px; font-weight: 700; padding: 4px 40px; transform: rotate(45deg); letter-spacing: 1px; }
+  .modal-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+  .modal-badge.pre { background: var(--amber-50); color: var(--amber-600); }
+  .modal-badge.int { background: var(--red-50); color: var(--red-800); }
+  .modal-card h3 { font-size: 22px; font-weight: 800; color: var(--slate-900); margin-bottom: 8px; }
+  .modal-card .periodo { font-size: 14px; color: var(--slate-500); margin-bottom: 20px; }
+  .modal-preco { display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px; }
+  .modal-preco .valor { font-size: 36px; font-weight: 900; color: var(--red-800); }
+  .modal-preco .periodo-p { font-size: 14px; color: var(--slate-500); }
+  .modal-preco .inscr { font-size: 13px; color: var(--slate-400); margin-left: 8px; }
+  .modal-features { list-style: none; margin-bottom: 24px; }
+  .modal-features li { padding: 8px 0; font-size: 14px; color: var(--slate-600); display: flex; align-items: flex-start; gap: 10px; border-bottom: 1px solid var(--slate-100); }
+  .modal-features li:last-child { border-bottom: none; }
+  .modal-features li::before { content: '✓'; color: var(--green-600); font-weight: 700; flex-shrink: 0; }
+  .modal-btn { display: block; text-align: center; padding: 14px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.3s; }
+  .modal-btn.primary { background: var(--red-800); color: #fff; }
+  .modal-btn.primary:hover { background: var(--red-700); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(153,27,27,0.3); }
+  .modal-btn.secondary { background: var(--slate-100); color: var(--slate-700); }
+  .modal-btn.secondary:hover { background: var(--slate-200); }
+  .modal-nota { text-align: center; margin-top: 24px; font-size: 13px; color: var(--slate-400); max-width: 600px; margin-left: auto; margin-right: auto; }
+
+  /* ===== CURSOS ===== */
+  .cursos { max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
+  .cursos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .curso-card { background: #fff; border-radius: 16px; padding: 32px 24px; text-align: center; box-shadow: var(--shadow-sm); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); border: 1px solid var(--slate-100); position: relative; overflow: hidden; }
+  .curso-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--red-800), var(--red-600)); transform: scaleX(0); transition: transform 0.4s; transform-origin: left; }
+  .curso-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+  .curso-card:hover::before { transform: scaleX(1); }
+  .curso-icon { width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 16px; background: var(--red-50); transition: all 0.3s; }
+  .curso-card:hover .curso-icon { background: var(--red-800); transform: scale(1.1); }
+  .curso-card:hover .curso-icon span { filter: brightness(10); }
+  .curso-card h3 { font-size: 18px; font-weight: 700; color: var(--slate-900); margin-bottom: 8px; }
+  .curso-card p { font-size: 14px; color: var(--slate-500); line-height: 1.6; }
+  .curso-materias { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 14px; }
+  .curso-materia { font-size: 11px; background: var(--slate-100); color: var(--slate-600); padding: 4px 10px; border-radius: 20px; font-weight: 500; }
+  .curso-nota-futura { font-size: 12px; color: var(--amber-600); background: var(--amber-50); padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+  .cursos-futuro { text-align: center; margin-top: 32px; padding: 20px; background: var(--amber-50); border-radius: 12px; border: 1px dashed var(--amber-600); }
+  .cursos-futuro p { font-size: 14px; color: var(--amber-600); font-weight: 600; }
+
+  /* ===== VANTAGENS ===== */
+  .vantagens { background: var(--slate-50); padding: 80px 24px; border-top: 1px solid var(--slate-100); border-bottom: 1px solid var(--slate-100); }
+  .vantagens-inner { max-width: 1200px; margin: 0 auto; }
+  .vantagens-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .vantagem { padding: 28px; border-radius: 16px; background: #fff; border: 1px solid var(--slate-100); transition: all 0.4s; }
+  .vantagem:hover { background: var(--red-50); border-color: var(--red-100); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .vantagem-icon { width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--red-800), var(--red-600)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+  .vantagem h4 { font-size: 16px; font-weight: 700; color: var(--slate-900); margin-bottom: 8px; }
+  .vantagem p { font-size: 14px; color: var(--slate-500); line-height: 1.6; }
+
+  /* ===== GALERIA ===== */
+  .galeria { padding: 80px 24px; background: #fff; }
+  .galeria-inner { max-width: 1200px; margin: 0 auto; }
+  .galeria-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .galeria-item { border-radius: 16px; overflow: hidden; position: relative; cursor: pointer; transition: all 0.4s; box-shadow: var(--shadow-sm); }
+  .galeria-item:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .galeria-item img { width: 100%; height: 260px; object-fit: cover; transition: transform 0.5s; }
+  .galeria-item:hover img { transform: scale(1.05); }
+  .galeria-item .overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.75)); color: #fff; padding: 20px; }
+  .galeria-item .overlay h4 { font-size: 15px; font-weight: 700; }
+  .galeria-item .overlay p { font-size: 12px; opacity: 0.8; }
+  .galeria-item.grande { grid-column: span 2; }
+  .galeria-item.grande img { height: 320px; }
+  .galeria-video { border-radius: 16px; overflow: hidden; position: relative; background: var(--slate-900); display: flex; align-items: center; justify-content: center; min-height: 260px; cursor: pointer; transition: all 0.4s; }
+  .galeria-video:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .galeria-video .play-btn { width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,0.2); border: 3px solid #fff; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #fff; transition: all 0.3s; }
+  .galeria-video:hover .play-btn { background: var(--red-800); border-color: var(--red-800); transform: scale(1.1); }
+  .galeria-video .video-label { position: absolute; bottom: 20px; left: 20px; color: #fff; }
+  .galeria-video .video-label h4 { font-size: 15px; font-weight: 700; }
+  .galeria-video .video-label p { font-size: 12px; opacity: 0.7; }
+
+  /* ===== TESTEMUNHOS ===== */
+  .testemunhos { padding: 80px 24px; background: linear-gradient(180deg, var(--slate-50), #fff); }
+  .testemunhos-inner { max-width: 1200px; margin: 0 auto; }
+  .testemunhos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .testemunho { background: #fff; border-radius: 16px; padding: 28px; box-shadow: var(--shadow-sm); border: 1px solid var(--slate-100); transition: all 0.3s; }
+  .testemunho:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+  .testemunho-stars { color: #f59e0b; font-size: 16px; margin-bottom: 14px; letter-spacing: 2px; }
+  .testemunho-text { font-size: 14px; color: var(--slate-600); line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+  .testemunho-autor { display: flex; align-items: center; gap: 12px; }
+  .testemunho-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--red-800), var(--red-600)); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; }
+  .testemunho-info .nome { font-size: 14px; font-weight: 600; color: var(--slate-800); }
+  .testemunho-info .detalhe { font-size: 12px; color: var(--slate-400); }
+
+  /* ===== AULAS ONLINE ===== */
+  .aulas-online { padding: 60px 24px; background: linear-gradient(135deg, var(--blue-50), var(--slate-50)); border-top: 1px solid var(--slate-100); }
+  .aulas-online-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+  .aulas-online-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-600); color: #fff; font-size: 12px; font-weight: 700; padding: 6px 16px; border-radius: 50px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+  .aulas-online h2 { font-size: 28px; font-weight: 800; color: var(--slate-900); margin-bottom: 12px; }
+  .aulas-online p { font-size: 15px; color: var(--slate-500); max-width: 500px; margin: 0 auto 24px; }
+  .aulas-features { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .aulas-feat { background: #fff; border: 1px solid var(--slate-200); border-radius: 12px; padding: 16px 20px; font-size: 14px; font-weight: 600; color: var(--slate-700); display: flex; align-items: center; gap: 8px; }
+
+  /* ===== FAQ ===== */
+  .faq { padding: 80px 24px; max-width: 760px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--slate-200); }
+  .faq-q { width: 100%; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer; font-size: 15px; font-weight: 600; color: var(--slate-800); text-align: left; font-family: inherit; gap: 16px; transition: color 0.2s; }
+  .faq-q:hover { color: var(--red-800); }
+  .faq-arrow { font-size: 20px; transition: transform 0.3s; color: var(--slate-400); flex-shrink: 0; }
+  .faq-item.open .faq-arrow { transform: rotate(45deg); color: var(--red-800); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+  .faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
+  .faq-a p { font-size: 14px; color: var(--slate-500); line-height: 1.7; }
+
+  /* ===== CTA BANNER ===== */
+  .cta-banner { background: linear-gradient(135deg, var(--red-900), var(--red-700)); padding: 60px 24px; text-align: center; color: #fff; position: relative; overflow: hidden; }
+  .cta-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08), transparent 50%); }
+  .cta-banner h2 { font-size: 32px; font-weight: 800; margin-bottom: 12px; position: relative; }
+  .cta-banner p { font-size: 16px; opacity: 0.8; margin-bottom: 28px; position: relative; }
+  .cta-banner .hero-btn-primary { position: relative; }
+
+  /* ===== FORMULARIO ===== */
+  .form-section { padding: 80px 24px; background: var(--slate-50); }
+  .form-wrapper { max-width: 680px; margin: 0 auto; }
+  .form-box { background: #fff; border-radius: 20px; padding: 40px; box-shadow: var(--shadow-lg); border: 1px solid var(--slate-100); }
+  .form-sec { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--red-800); font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--red-100); margin-top: 28px; }
+  .form-sec:first-child { margin-top: 0; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .form-row.full { grid-template-columns: 1fr; }
+  .form-group { display: flex; flex-direction: column; }
+  .form-group label { font-size: 13px; color: var(--slate-600); margin-bottom: 6px; font-weight: 600; }
+  .form-group label .req { color: var(--red-600); }
+  .form-group input, .form-group select, .form-group textarea { padding: 11px 14px; border-radius: 10px; border: 1.5px solid var(--slate-200); font-size: 14px; font-family: inherit; outline: none; transition: all 0.2s; background: var(--slate-50); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--red-700); box-shadow: 0 0 0 3px rgba(153,27,27,0.08); background: #fff; }
+  .form-group textarea { resize: vertical; min-height: 70px; }
+  .form-submit { width: 100%; padding: 15px; background: linear-gradient(135deg, var(--red-800), var(--red-700)); color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; margin-top: 28px; transition: all 0.3s; position: relative; overflow: hidden; font-family: inherit; }
+  .form-submit::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); background-size: 200% 100%; animation: shimmer 3s infinite; }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(153,27,27,0.3); }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .form-progress { display: flex; gap: 8px; margin-bottom: 24px; }
+  .form-progress-dot { width: 100%; height: 4px; border-radius: 2px; background: var(--slate-200); transition: background 0.3s; }
+  .form-progress-dot.filled { background: var(--red-800); }
+
+  /* Sucesso */
+  .sucesso { display: none; text-align: center; padding: 48px 24px; }
+  .sucesso-icon { width: 80px; height: 80px; border-radius: 50%; background: var(--green-50); color: var(--green-600); display: flex; align-items: center; justify-content: center; font-size: 40px; margin: 0 auto 20px; animation: scaleIn 0.5s ease; }
+  .sucesso h3 { font-size: 24px; color: var(--green-600); font-weight: 800; margin-bottom: 12px; }
+  .sucesso p { color: var(--slate-500); font-size: 15px; line-height: 1.7; max-width: 420px; margin: 0 auto; }
+  .sucesso-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+  .sucesso .voltar, .sucesso .download-ficha { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; cursor: pointer; border: none; font-size: 14px; font-family: inherit; transition: all 0.2s; }
+  .sucesso .download-ficha { background: var(--red-800); color: #fff; }
+  .sucesso .download-ficha:hover { background: var(--red-700); transform: translateY(-1px); }
+  .sucesso .voltar { background: var(--slate-100); color: var(--slate-700); }
+  .sucesso .voltar:hover { background: var(--slate-200); transform: translateY(-1px); }
+
+  /* ===== CONTACTO ===== */
+  .contacto { background: var(--slate-900); color: #fff; padding: 60px 24px; }
+  .contacto-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .contacto-info h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
+  .contacto-info p { color: var(--slate-400); font-size: 15px; line-height: 1.7; margin-bottom: 24px; }
+  .contacto-links { display: flex; flex-direction: column; gap: 12px; }
+  .contacto-link { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.06); padding: 16px 20px; border-radius: 12px; text-decoration: none; color: #fff; font-size: 14px; font-weight: 500; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.08); }
+  .contacto-link:hover { background: rgba(255,255,255,0.12); transform: translateX(6px); }
+  .contacto-link .icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .contacto-link .text-sm { font-size: 12px; color: var(--slate-400); }
+  .contacto-mapa { background: rgba(255,255,255,0.05); border-radius: 16px; height: 280px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.08); }
+  .contacto-mapa-inner { text-align: center; color: var(--slate-400); }
+  .contacto-mapa-inner .pin { font-size: 48px; margin-bottom: 12px; }
+  .contacto-mapa-inner p { font-size: 14px; line-height: 1.6; }
+
+  /* ===== FOOTER ===== */
+  .footer { background: #0f172a; padding: 32px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-copy { font-size: 13px; color: var(--slate-500); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-size: 13px; color: var(--slate-400); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #fff; }
+
+  /* ===== WHATSAPP FLOAT ===== */
+  .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 90; width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4); transition: all 0.3s; animation: float 3s ease-in-out infinite; }
+  .whatsapp-float:hover { transform: scale(1.12); box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5); animation: none; }
+
+  /* ===== HAMBURGER MENU ===== */
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; flex-direction: column; gap: 5px; }
+  .hamburger span { display: block; width: 24px; height: 2.5px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+  .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(127, 29, 29, 0.98); backdrop-filter: blur(12px); padding: 16px 24px 24px; z-index: 99; border-bottom: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.3); transform: translateY(-10px); opacity: 0; transition: all 0.3s ease; }
+  .mobile-menu.open { display: flex; flex-direction: column; gap: 4px; transform: translateY(0); opacity: 1; }
+  .mobile-menu a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 15px; font-weight: 500; padding: 12px 16px; border-radius: 8px; transition: all 0.2s; }
+  .mobile-menu a:hover { background: rgba(255,255,255,0.1); color: #fff; }
+  .mobile-menu .mobile-cta { background: #fff; color: var(--red-800); text-align: center; font-weight: 700; margin-top: 8px; border-radius: 10px; padding: 14px; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .cursos-grid, .vantagens-grid, .testemunhos-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .contacto-inner, .quem-somos-grid, .modal-grid { grid-template-columns: 1fr; }
+    .contacto-mapa { height: 200px; }
+    .galeria-grid { grid-template-columns: 1fr 1fr; }
+    .galeria-item.grande { grid-column: span 1; }
+    .galeria-item.grande img { height: 260px; }
+  }
+  @media (max-width: 640px) {
+    .hero { padding: 120px 20px 100px; }
+    .hero h2 { font-size: 32px; letter-spacing: -1px; }
+    .hero p { font-size: 15px; }
+    .hero-actions { flex-direction: column; align-items: center; }
+    .section-title { font-size: 26px; }
+    .cursos-grid, .vantagens-grid, .testemunhos-grid, .galeria-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .form-row { grid-template-columns: 1fr; }
+    .form-box { padding: 24px; }
+    .header-nav { display: none; }
+    .hamburger { display: flex; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+    .timeline { flex-direction: column; }
+    .aulas-features { flex-direction: column; align-items: center; }
+    .modal-grid { grid-template-columns: 1fr; }
+    .quem-somos-img img { height: 280px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header" id="topHeader">
+  <div class="header-inner">
+    <a href="#" class="header-brand">
+      <img src="/website/logo.jpg" alt="MedPremium" onerror="this.style.display='none'">
+      <div>
+        <h1>Preparatório<span class="sub">MedPremium</span></h1>
+      </div>
+    </a>
+    <nav class="header-nav">
+      <a href="#quem-somos">Quem Somos</a>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#inscricao" class="header-cta">Inscrever-me</a>
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#quem-somos" onclick="closeMenu()">Quem Somos</a>
+  <a href="#modalidades" onclick="closeMenu()">Modalidades</a>
+  <a href="#cursos" onclick="closeMenu()">Cursos</a>
+  <a href="#galeria" onclick="closeMenu()">Galeria</a>
+  <a href="#testemunhos" onclick="closeMenu()">Testemunhos</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contacto" onclick="closeMenu()">Contacto</a>
+  <a href="#inscricao" class="mobile-cta" onclick="closeMenu()">Inscrever-me Agora</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-tag"><span class="dot"></span> Inscrições abertas para 2026</div>
+    <h2>De estudantes<br>para <em>estudantes.</em></h2>
+    <p>Preparação intensiva para ingresso nas melhores faculdades de Angola. Professores que já passaram pelo mesmo caminho, material personalizado e resultados comprovados desde 2009.</p>
+    <div class="hero-badges">
+      <span class="hero-badge">Medicina</span>
+      <span class="hero-badge">Enfermagem</span>
+      <span class="hero-badge">Análises Clínicas</span>
+      <span class="hero-badge">Nutrição</span>
+      <span class="hero-badge">Fisioterapia</span>
+      <span class="hero-badge">Biologia</span>
+      <span class="hero-badge">Química</span>
+      <span class="hero-badge">Agronomia</span>
+      <span class="hero-badge">Zootecnia</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#inscricao" class="hero-btn-primary">Inscrever-me Agora &rarr;</a>
+      <a href="#modalidades" class="hero-btn-secondary">Ver Modalidades</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item anim anim-up">
+      <div class="stat-num" data-count="500">0</div>
+      <div class="stat-label">Estudantes Formados</div>
+    </div>
+    <div class="stat-item anim anim-up delay-1">
+      <div class="stat-num" data-count="85" data-suffix="%">0</div>
+      <div class="stat-label">Taxa de Aprovação</div>
+    </div>
+    <div class="stat-item anim anim-up delay-2">
+      <div class="stat-num" data-count="22">0</div>
+      <div class="stat-label">Admitidos em 2025/2026</div>
+    </div>
+    <div class="stat-item anim anim-up delay-3">
+      <div class="stat-num" data-count="2009">0</div>
+      <div class="stat-label">Ano de Fundação</div>
+    </div>
+  </div>
+</section>
+
+<!-- Quem Somos -->
+<section class="quem-somos" id="quem-somos">
+  <div class="section-header anim anim-up">
+    <div class="section-tag">Quem Somos</div>
+    <h2 class="section-title">A nossa história</h2>
+    <p class="section-sub">Um preparatório tão antigo quanto a própria Faculdade de Medicina da Universidade Mandume Ya Ndemufayo.</p>
+  </div>
+
+  <div class="quem-somos-grid">
+    <div class="quem-somos-text anim anim-left">
+      <h3>De estudantes para estudantes, desde 2009</h3>
+      <p>O Preparatório MedPremium nasceu em 2009, pelas mãos do <strong>Dr. Efigénio Pacífico</strong> e <strong>Edson Mário</strong>, que começaram a ajudar colegas na preparação para os exames de acesso ao ensino superior. O que começou como explicações em casa rapidamente cresceu e transformou-se numa missão.</p>
+      <p>Ao longo dos anos, o preparatório foi passando de geração em geração, sempre entre estudantes comprometidos com a mesma causa: <strong>Armando Kahala</strong> e <strong>José Cateve</strong> (2016), depois <strong>Ângelo Xavier</strong> e <strong>Jorge Pacheco</strong> (2019–2024) deram continuidade ao projecto, mantendo sempre a essência de uma preparação feita por quem já viveu o mesmo desafio.</p>
+      <p>Desde 2022, sob a liderança de <strong>Tchalo Estrela</strong> e <strong>Orlando Domingos</strong>, o MedPremium continua fiel à sua missão original: oferecer uma preparação de qualidade, acessível e eficaz. Na edição 2025/2026 contribuímos para o ingresso de <strong>22 estudantes</strong> em distintas faculdades, com destaque para o curso de Medicina.</p>
+
+      <div class="destaque">
+        "O nosso objectivo é contribuir na formação de novas gerações de médicos e profissionais. Somos estudantes que ajudam estudantes."
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="ano">2009</div>
+          <div class="desc">Fundação por Efigénio Pacífico e Edson Mário</div>
+        </div>
+        <div class="timeline-item">
+          <div class="ano">2016</div>
+          <div class="desc">Armando Kahala e José Cateve</div>
+        </div>
+        <div class="timeline-item">
+          <div class="ano">2019</div>
+          <div class="desc">Ângelo Xavier e Jorge Pacheco</div>
+        </div>
+        <div class="timeline-item">
+          <div class="ano">2022</div>
+          <div class="desc">Tchalo Estrela e Orlando Domingos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quem-somos-img anim anim-right">
+      <img src="/website/equipa-actual.jpg" alt="Equipa actual do Preparatório MedPremium — Orlando Domingos, João Quintino e Tchalo Estrela" onerror="this.parentElement.style.background='linear-gradient(135deg, var(--red-50), var(--slate-100))'; this.style.display='none'">
+      <div class="caption">
+        <strong>Prof. Orlando Domingos, João Quintino e Tchalo Estrela</strong>
+        A equipa actual que lidera o MedPremium
+      </div>
+      <img src="/website/fundadores.jpg" alt="Fundadores do Preparatório MedPremium" style="margin-top:16px;border-radius:16px" onerror="this.style.display='none'">
+      <div class="caption" style="margin-top:8px">
+        <strong>Efigénio Pacífico (fundador), Jorge Pacheco e Ângelo Xavier</strong>
+        Professores que construíram a história do MedPremium
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modalidades -->
+<section class="modalidades" id="modalidades">
+  <div class="modalidades-inner">
+    <div class="section-header anim anim-up">
+      <div class="section-tag">Modalidades</div>
+      <h2 class="section-title">Escolhe o teu plano</h2>
+      <p class="section-sub">Duas modalidades para se adaptar ao teu ritmo e necessidades.</p>
+    </div>
+
+    <div class="modal-grid">
+      <!-- Pré-Preparatório -->
+      <div class="modal-card anim anim-up delay-1">
+        <div class="modal-badge pre">Antecipado</div>
+        <h3>Pré-Preparatório</h3>
+        <div class="periodo">Fevereiro a Agosto</div>
+        <div class="modal-preco">
+          <span class="valor">10.000 Kz</span>
+          <span class="periodo-p">/mês</span>
+        </div>
+        <div style="font-size:13px;color:var(--slate-400);margin-bottom:20px">Inscrição: 2.000 Kz</div>
+        <ul class="modal-features">
+          <li>Aulas aos Sábados de manhã (08h - 12h)</li>
+          <li>Aulas aos Domingos de tarde (14h - 18h)</li>
+          <li>Aulas nos Feriados de manhã (08h - 12h)</li>
+          <li>A partir de Julho: aulas diárias (seg - sex)</li>
+          <li>Preparação intensiva e focada</li>
+          <li>Simulados e exercícios de exames anteriores</li>
+          <li>Material personalizado incluído</li>
+          <li>Acompanhamento individualizado</li>
+        </ul>
+        <a href="#inscricao" class="modal-btn secondary">Inscrever-me &rarr;</a>
+      </div>
+
+      <!-- Preparatório Intensivo -->
+      <div class="modal-card destaque anim anim-up delay-2">
+        <div class="modal-badge int">Intensivo</div>
+        <h3>Preparatório Intensivo</h3>
+        <div class="periodo">Julho a Agosto</div>
+        <div class="modal-preco">
+          <span class="valor">30.000 Kz</span>
+          <span class="periodo-p">/total</span>
+        </div>
+        <div style="font-size:13px;color:var(--slate-400);margin-bottom:20px">Inscrição: 2.000 Kz</div>
+        <ul class="modal-features">
+          <li>Aulas de Segunda a Sexta</li>
+          <li>Turmas manhã (08h-12h) e tarde (14h-18h)</li>
+          <li>Preparação intensiva e focada</li>
+          <li>Simulados e exercícios de exames anteriores</li>
+          <li>Material personalizado incluído</li>
+          <li>Acompanhamento individualizado</li>
+        </ul>
+        <a href="#inscricao" class="modal-btn primary">Inscrever-me Agora &rarr;</a>
+      </div>
+    </div>
+
+    <div class="modal-nota anim anim-up delay-3">
+      A inscrição pode ser feita online, por WhatsApp, ou presencialmente no Colégio O Meu Livro nos momentos das aulas.
+    </div>
+  </div>
+</section>
+
+<!-- Cursos -->
+<section class="cursos" id="cursos">
+  <div class="section-header anim anim-up">
+    <div class="section-tag">Cursos</div>
+    <h2 class="section-title">Preparação por área</h2>
+    <p class="section-sub">Cursos especializados para cada área do ensino superior. Preparação focada nas matérias do teu exame de acesso.</p>
+  </div>
+  <div class="cursos-grid">
+    <div class="curso-card anim anim-up delay-1">
+      <div class="curso-icon"><span>🩺</span></div>
+      <h3>Medicina</h3>
+      <p>Preparação completa e intensiva para o exame de acesso a Medicina.</p>
+      <div class="curso-materias">
+        <span class="curso-materia">Biologia</span>
+        <span class="curso-materia">Química</span>
+        <span class="curso-materia">Matemática</span>
+        <span class="curso-materia">Português</span>
+      </div>
+    </div>
+    <div class="curso-card anim anim-up delay-2">
+      <div class="curso-icon"><span>🏥</span></div>
+      <h3>Enfermagem</h3>
+      <p>Preparação focada para ingresso nos cursos de Enfermagem.</p>
+      <div class="curso-materias">
+        <span class="curso-materia">Biologia</span>
+        <span class="curso-materia">Português</span>
+      </div>
+    </div>
+    <div class="curso-card anim anim-up delay-3">
+      <div class="curso-icon"><span>🔬</span></div>
+      <h3>Análises Clínicas</h3>
+      <p>Foco nas ciências laboratoriais para Análises Clínicas.</p>
+      <div class="curso-materias">
+        <span class="curso-materia">Biologia</span>
+        <span class="curso-materia">Português</span>
+      </div>
+    </div>
+    <div class="curso-card anim anim-up delay-1">
+      <div class="curso-icon"><span>🥗</span></div>
+      <h3>Nutrição</h3>
+      <p>Preparação para cursos de Nutrição e ciências da saúde.</p>
+      <div class="curso-materias">
+        <span class="curso-materia">Biologia</span>
+        <span class="curso-materia">Português</span>
+      </div>
+    </div>
+    <div class="curso-card anim anim-up delay-2">
+      <div class="curso-icon"><span>🦴</span></div>
+      <h3>Fisioterapia</h3>
+      <p>Preparação para ingresso nos cursos de Fisioterapia e reabilitação.</p>
+      <div class="curso-materias">
+        <span class="curso-materia">Biologia</span>
+        <span class="curso-materia">Português</span>
+      </div>
+    </div>
+    <div class="curso-card anim anim-up delay-3">
+      <div class="curso-icon"><span>🧪</span></div>
+      <h3>Química</h3>
+      <p>Preparação para ingresso no curso de Química.</p>
+      <div class="curso-materias">
+        <span class="curso-materia">Química</span>
+        <span class="curso-materia">Português</span>
+      </div>
+    </div>
+    <div class="curso-card anim anim-up delay-1">
+      <div class="curso-icon"><span>🧬</span></div>
+      <h3>Biologia</h3>
+      <p>Preparação para ingresso no curso de Biologia.</p>
+      <div class="curso-materias">
+        <span class="curso-materia">Biologia</span>
+        <span class="curso-materia">Português</span>
+      </div>
+    </div>
+    <div class="curso-card anim anim-up delay-2">
+      <div class="curso-icon"><span>🌱</span></div>
+      <h3>Agronomia</h3>
+      <p>Preparação focada para ingresso nos cursos de Agronomia.</p>
+      <div class="curso-materias">
+        <span class="curso-materia">Biologia</span>
+        <span class="curso-materia">Português</span>
+      </div>
+    </div>
+    <div class="curso-card anim anim-up delay-3">
+      <div class="curso-icon"><span>🐄</span></div>
+      <h3>Zootecnia</h3>
+      <p>Preparação para cursos de Zootecnia e ciências animais.</p>
+      <div class="curso-materias">
+        <span class="curso-materia">Biologia</span>
+        <span class="curso-materia">Português</span>
+      </div>
+    </div>
+    <div class="curso-card anim anim-up delay-1">
+      <div class="curso-icon"><span>📚</span></div>
+      <h3>ISCED</h3>
+      <p>Preparação para os cursos do ISCED em Biologia e Química.</p>
+      <div class="curso-materias">
+        <span class="curso-materia">Biologia</span>
+        <span class="curso-materia">Química</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cursos-futuro anim anim-up delay-3">
+    <p>🚀 Brevemente: Língua Portuguesa, Inglês, Direito e cursos de Engenharia</p>
+  </div>
+</section>
+
+<!-- Vantagens -->
+<section class="vantagens" id="vantagens">
+  <div class="vantagens-inner">
+    <div class="section-header anim anim-up">
+      <div class="section-tag">Vantagens</div>
+      <h2 class="section-title">Porquê escolher o MedPremium?</h2>
+      <p class="section-sub">Tudo o que precisas para conquistar a tua vaga no ensino superior.</p>
+    </div>
+    <div class="vantagens-grid">
+      <div class="vantagem anim anim-up delay-1">
+        <div class="vantagem-icon">👨‍🏫</div>
+        <h4>Professores que já passaram pelo mesmo</h4>
+        <p>Os nossos professores são estudantes universitários que já fizeram o mesmo exame. Sabem exactamente o que precisas.</p>
+      </div>
+      <div class="vantagem anim anim-up delay-2">
+        <div class="vantagem-icon">📖</div>
+        <h4>Material Personalizado</h4>
+        <p>Material próprio do MedPremium de Química, Biologia, Matemática e Língua Portuguesa, actualizado todos os anos.</p>
+      </div>
+      <div class="vantagem anim anim-up delay-3">
+        <div class="vantagem-icon">👥</div>
+        <h4>Turmas Reduzidas</h4>
+        <p>Atenção personalizada com turmas de tamanho limitado para melhor acompanhamento de cada estudante.</p>
+      </div>
+      <div class="vantagem anim anim-up delay-1">
+        <div class="vantagem-icon">🕐</div>
+        <h4>Horários Flexíveis</h4>
+        <p>Turnos de manhã (08h-12h) e tarde (14h-18h). No pré-preparatório, aulas aos sábados, domingos e feriados.</p>
+      </div>
+      <div class="vantagem anim anim-up delay-2">
+        <div class="vantagem-icon">🏆</div>
+        <h4>Resultados Desde 2009</h4>
+        <p>Mais de 15 anos de história com centenas de estudantes aprovados nas melhores faculdades de Angola.</p>
+      </div>
+      <div class="vantagem anim anim-up delay-3">
+        <div class="vantagem-icon">💳</div>
+        <h4>Preços Acessíveis</h4>
+        <p>Inscrição a partir de 2.000 Kz. Propinas acessíveis porque somos de estudantes para estudantes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Galeria -->
+<section class="galeria" id="galeria">
+  <div class="galeria-inner">
+    <div class="section-header anim anim-up">
+      <div class="section-tag">Galeria</div>
+      <h2 class="section-title">Os nossos resultados falam por si</h2>
+      <p class="section-sub">Estudantes que passaram pelo MedPremium e conquistaram a sua vaga.</p>
+    </div>
+
+    <div class="galeria-grid">
+      <div class="galeria-item anim anim-up delay-1">
+        <img src="/website/MED_2026_Estudante_4.3.png" alt="Flyer Curso Preparatório 2026 - Azul" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 600%22%3E%3Crect fill=%22%23eff6ff%22 width=%22400%22 height=%22600%22/%3E%3Ctext x=%22200%22 y=%22300%22 text-anchor=%22middle%22 fill=%222563eb%22 font-family=%22Inter%22 font-size=%2216%22%3EFlyer 2026%3C/text%3E%3C/svg%3E'">
+        <div class="overlay">
+          <h4>Curso Preparatório 2026</h4>
+          <p>Modalidade Pré-Preparatório</p>
+        </div>
+      </div>
+
+      <div class="galeria-item anim anim-up delay-2">
+        <img src="/website/MED_2026_Estudante_4.2.png" alt="Flyer Curso Preparatório 2026 - Vermelho" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 600%22%3E%3Crect fill=%23FEF2F2%22 width=%22400%22 height=%22600%22/%3E%3Ctext x=%22200%22 y=%22300%22 text-anchor=%22middle%22 fill=%23991B1B%22 font-family=%22Inter%22 font-size=%2216%22%3EFlyer 2026%3C/text%3E%3C/svg%3E'">
+        <div class="overlay">
+          <h4>Curso Preparatório 2026</h4>
+          <p>Modalidade Intensiva</p>
+        </div>
+      </div>
+
+      <div class="galeria-item grande anim anim-up delay-3">
+        <img src="/website/estudantes-admitidos.jpg" alt="Estudantes admitidos do MedPremium" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 320%22%3E%3Crect fill=%22%23f1f5f9%22 width=%22600%22 height=%22320%22/%3E%3Ctext x=%22300%22 y=%22160%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22 font-family=%22Inter%22 font-size=%2218%22%3EEstudantes Admitidos%3C/text%3E%3C/svg%3E'">
+        <div class="overlay">
+          <h4>22 Estudantes Admitidos — 2025/2026</h4>
+          <p>16 admitidos na UMN e 6 na UKB, com destaque para o curso de Medicina</p>
+        </div>
+      </div>
+
+      <div class="galeria-video anim anim-up delay-4">
+        <div class="play-btn">▶</div>
+        <div class="video-label">
+          <h4>Testemunhos em Vídeo</h4>
+          <p>Brevemente</p>
+        </div>
+      </div>
+
+      <div class="galeria-item anim anim-up delay-5">
+        <img src="/website/aulas.jpg" alt="Aulas no MedPremium" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 260%22%3E%3Crect fill=%22%23f1f5f9%22 width=%22400%22 height=%22260%22/%3E%3Ctext x=%22200%22 y=%22120%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22 font-family=%22Inter%22 font-size=%2216%22%3EFotos das Aulas%3C/text%3E%3Ctext x=%22200%22 y=%22145%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22 font-family=%22Inter%22 font-size=%2214%22%3EBrevemente%3C/text%3E%3C/svg%3E'">
+        <div class="overlay">
+          <h4>As nossas aulas</h4>
+          <p>Preparação no Colégio O Meu Livro</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testemunhos -->
+<section class="testemunhos" id="testemunhos">
+  <div class="testemunhos-inner">
+    <div class="section-header anim anim-up">
+      <div class="section-tag">Testemunhos</div>
+      <h2 class="section-title">O que dizem os nossos estudantes</h2>
+      <p class="section-sub">Histórias reais de quem já passou pelo MedPremium.</p>
+    </div>
+    <div class="testemunhos-grid">
+      <div class="testemunho anim anim-up delay-1">
+        <div class="testemunho-stars">★★★★★</div>
+        <div class="testemunho-text">"Graças ao MedPremium consegui ingressar na Faculdade de Medicina. Os professores são excelentes e o material muito completo."</div>
+        <div class="testemunho-autor">
+          <div class="testemunho-avatar">AM</div>
+          <div class="testemunho-info">
+            <div class="nome">Ana Martins</div>
+            <div class="detalhe">Medicina — FMUAN 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="testemunho anim anim-up delay-2">
+        <div class="testemunho-stars">★★★★★</div>
+        <div class="testemunho-text">"As turmas pequenas fazem toda a diferença. Senti-me sempre acompanhado e preparado para o exame."</div>
+        <div class="testemunho-autor">
+          <div class="testemunho-avatar">PC</div>
+          <div class="testemunho-info">
+            <div class="nome">Pedro Costa</div>
+            <div class="detalhe">Enfermagem — UAN 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="testemunho anim anim-up delay-3">
+        <div class="testemunho-stars">★★★★★</div>
+        <div class="testemunho-text">"Na minha segunda tentativa, com o MedPremium, finalmente consegui a vaga em Biologia. O facto de os professores serem estudantes é uma grande vantagem!"</div>
+        <div class="testemunho-autor">
+          <div class="testemunho-avatar">LS</div>
+          <div class="testemunho-info">
+            <div class="nome">Luísa Santos</div>
+            <div class="detalhe">Biologia — UAN 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Aulas Online -->
+<section class="aulas-online" id="aulas-online">
+  <div class="aulas-online-inner anim anim-up">
+    <div class="aulas-online-badge">🚀 Em breve</div>
+    <h2>Aulas e Exercícios Online</h2>
+    <p>Estamos a preparar uma plataforma digital para complementar a tua preparação. Testa os teus conhecimentos a qualquer hora, em qualquer lugar.</p>
+    <div class="aulas-features">
+      <div class="aulas-feat">📹 Aulas Online</div>
+      <div class="aulas-feat">📝 Questões de Exame</div>
+      <div class="aulas-feat">🧠 Testa os teus Conhecimentos</div>
+      <div class="aulas-feat">📊 Simulados Completos</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-header anim anim-up">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-title">Perguntas Frequentes</h2>
+  </div>
+  <div class="faq-item anim anim-up delay-1">
+    <button class="faq-q" onclick="toggleFAQ(this)">Quais são as modalidades disponíveis?<span class="faq-arrow">+</span></button>
+    <div class="faq-a"><p>Temos duas modalidades: o <strong>Pré-Preparatório</strong> (Fevereiro a Agosto, com aulas aos sábados, domingos e feriados, passando a diário a partir de Julho, por 10.000 Kz/mês) e o <strong>Preparatório Intensivo</strong> (Julho a Agosto, aulas de segunda a sexta, por 30.000 Kz total). Ambas incluem material personalizado, simulados e acompanhamento individualizado. A inscrição custa 2.000 Kz.</p></div>
+  </div>
+  <div class="faq-item anim anim-up delay-2">
+    <button class="faq-q" onclick="toggleFAQ(this)">Quais são os horários das aulas?<span class="faq-arrow">+</span></button>
+    <div class="faq-a"><p><strong>Pré-Preparatório (Fev–Ago):</strong> Sábados de manhã (08h-12h), Domingos de tarde (14h-18h), Feriados de manhã (08h-12h). A partir de Julho passa a diário (seg-sex).<br><strong>Intensivo (Jul–Ago):</strong> De segunda a sexta, turno da manhã (08h-12h) ou turno da tarde (14h-18h).</p></div>
+  </div>
+  <div class="faq-item anim anim-up delay-3">
+    <button class="faq-q" onclick="toggleFAQ(this)">Que cursos posso preparar no MedPremium?<span class="faq-arrow">+</span></button>
+    <div class="faq-a"><p>Actualmente preparamos para: Medicina, Enfermagem, Análises Clínicas, Nutrição, Fisioterapia, Biologia, Química, Agronomia, Zootecnia e outros cursos da área da saúde. No ISCED, preparamos Biologia e Química. Brevemente teremos também Língua Portuguesa, Inglês, Direito e cursos de Engenharia.</p></div>
+  </div>
+  <div class="faq-item anim anim-up delay-4">
+    <button class="faq-q" onclick="toggleFAQ(this)">Como posso fazer a inscrição?<span class="faq-arrow">+</span></button>
+    <div class="faq-a"><p>Podes inscrever-te de três formas: <strong>online</strong> (preenchendo o formulário nesta página), por <strong>WhatsApp</strong> (enviando mensagem para o nosso número), ou <strong>presencialmente</strong> no Colégio O Meu Livro, nos momentos das aulas.</p></div>
+  </div>
+  <div class="faq-item anim anim-up delay-5">
+    <button class="faq-q" onclick="toggleFAQ(this)">Onde ficam as aulas?<span class="faq-arrow">+</span></button>
+    <div class="faq-a"><p>As aulas decorrem no <strong>Colégio O Meu Livro</strong>, por detrás da ENDE, no Centro da cidade do Lubango. Estamos disponíveis de segunda a domingo durante o período do preparatório.</p></div>
+  </div>
+  <div class="faq-item anim anim-up delay-5">
+    <button class="faq-q" onclick="toggleFAQ(this)">Que material é fornecido?<span class="faq-arrow">+</span></button>
+    <div class="faq-a"><p>Fornecemos material personalizado do MedPremium em Química, Biologia, Matemática e Língua Portuguesa. Todo o material está incluído na propina e é actualizado anualmente com base nos exames anteriores.</p></div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner">
+  <h2 class="anim anim-up">Pronto para conquistar a tua vaga?</h2>
+  <p class="anim anim-up delay-1">Junta-te a centenas de estudantes que já realizaram o sonho de entrar na faculdade.</p>
+  <a href="#inscricao" class="hero-btn-primary anim anim-scale delay-2">Inscrever-me Agora &rarr;</a>
+</section>
+
+<!-- Formulario -->
+<section class="form-section" id="inscricao">
+  <div class="form-wrapper">
+    <div class="section-header anim anim-up">
+      <div class="section-tag">Inscrição</div>
+      <h2 class="section-title">Inscrição Online</h2>
+      <p class="section-sub">Preenche o formulário e a nossa equipa entrará em contacto contigo.</p>
+    </div>
+
+    <div class="form-box anim anim-up delay-1">
+      <form id="formInscricao">
+        <div class="form-progress" id="formProgress">
+          <div class="form-progress-dot"></div>
+          <div class="form-progress-dot"></div>
+          <div class="form-progress-dot"></div>
+          <div class="form-progress-dot"></div>
+          <div class="form-progress-dot"></div>
+        </div>
+
+        <div class="form-sec">Dados Pessoais</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nome Completo <span class="req">*</span></label>
+            <input type="text" name="nome" required placeholder="O teu nome completo">
+          </div>
+          <div class="form-group">
+            <label>Telefone <span class="req">*</span></label>
+            <input type="tel" name="telefone" required placeholder="Ex: 923 456 789">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Sexo</label>
+            <select name="sexo">
+              <option value="">— Seleccionar —</option>
+              <option value="M">Masculino</option>
+              <option value="F">Feminino</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>N.º Bilhete de Identidade</label>
+            <input type="text" name="numeroBilhete" placeholder="Ex: 000123456LA789">
+          </div>
+        </div>
+        <div class="form-row full">
+          <div class="form-group">
+            <label>Morada</label>
+            <input type="text" name="morada" placeholder="Bairro, Município">
+          </div>
+        </div>
+
+        <div class="form-sec">Dados Académicos</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Curso do Ensino Médio</label>
+            <input type="text" name="cursoEnsinoMedio" placeholder="Ex: Enfermagem, CFB...">
+          </div>
+          <div class="form-group">
+            <label>Instituição do Ensino Médio</label>
+            <input type="text" name="instituicaoEnsinoMedio" placeholder="Nome da escola">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Média do Ensino Médio</label>
+            <input type="number" name="mediaEnsinoMedio" step="0.1" min="0" max="20" placeholder="Ex: 14.5">
+          </div>
+          <div class="form-group">
+            <label>N.º de Tentativas ao Superior</label>
+            <input type="number" name="numTentativas" min="0" value="0">
+          </div>
+        </div>
+
+        <div class="form-sec">Inscrição</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Curso Pretendido <span class="req">*</span></label>
+            <select name="cursoAlvo" required>
+              <option value="Medicina">Medicina</option>
+              <option value="Enfermagem">Enfermagem</option>
+              <option value="Análises Clínicas">Análises Clínicas</option>
+              <option value="Nutrição">Nutrição</option>
+              <option value="Fisioterapia">Fisioterapia</option>
+              <option value="Biologia">Biologia</option>
+              <option value="Química">Química</option>
+              <option value="Agronomia">Agronomia</option>
+              <option value="Zootecnia">Zootecnia</option>
+              <option value="ISCED">ISCED</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Modalidade <span class="req">*</span></label>
+            <select name="modalidade" required>
+              <option value="intensivo">Preparatório Intensivo (30.000 Kz)</option>
+              <option value="pre-preparatorio">Pré-Preparatório (10.000 Kz/mês)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Turno Preferido</label>
+            <select name="turnoPreferido">
+              <option value="">— Sem preferência —</option>
+              <option value="manha">Manhã (08h - 12h)</option>
+              <option value="tarde">Tarde (14h - 18h)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row full">
+          <div class="form-group">
+            <label>Mensagem / Observações</label>
+            <textarea name="notas" placeholder="Alguma informação adicional que queiras partilhar..."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="form-submit" id="btnSubmit">Enviar Inscrição &rarr;</button>
+      </form>
+
+      <div class="sucesso" id="sucesso">
+        <div class="sucesso-icon">✓</div>
+        <h3>Inscrição Enviada!</h3>
+        <p>A tua inscrição foi recebida com sucesso. A nossa equipa vai analisar os teus dados e entrará em contacto pelo telefone indicado.</p>
+        <div class="sucesso-btns">
+          <button class="download-ficha" id="btnDownloadFicha" onclick="downloadFicha()">📄 Baixar Ficha de Inscrição</button>
+          <button class="voltar" onclick="location.reload()">Nova Inscrição</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contacto -->
+<section class="contacto" id="contacto">
+  <div class="contacto-inner">
+    <div class="contacto-info anim anim-left">
+      <h2>Fala Connosco</h2>
+      <p>Tens dúvidas? Estamos disponíveis para te ajudar. A inscrição pode ser feita online, por WhatsApp ou presencialmente.</p>
+      <div class="contacto-links">
+        <a href="https://wa.me/244923456789" target="_blank" class="contacto-link">
+          <div class="icon">💬</div>
+          <div>
+            <div>WhatsApp</div>
+            <div class="text-sm">Inscrição e informações</div>
+          </div>
+        </a>
+        <a href="tel:+244923456789" class="contacto-link">
+          <div class="icon">📞</div>
+          <div>
+            <div>+244 923 456 789</div>
+            <div class="text-sm">Seg - Dom, 08h - 18h</div>
+          </div>
+        </a>
+        <a class="contacto-link" style="cursor:default">
+          <div class="icon">📍</div>
+          <div>
+            <div>Colégio O Meu Livro</div>
+            <div class="text-sm">Por detrás da ENDE, Centro da cidade do Lubango</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-mapa anim anim-right">
+      <div class="contacto-mapa-inner">
+        <div class="pin">📍</div>
+        <p><strong>Colégio O Meu Livro</strong></p>
+        <p>Por detrás da ENDE, Centro da cidade do Lubango</p>
+        <p>Lubango, Angola</p>
+        <p style="margin-top:12px;font-size:12px;color:var(--slate-500)">
+          Inscrições presenciais nos momentos das aulas<br>
+          Seg - Dom: 08h - 18h
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-copy">Preparatório MedPremium &copy; 2026 — De estudantes para estudantes, desde 2009</div>
+    <div class="footer-links">
+      <a href="#inicio">Início</a>
+      <a href="#quem-somos">Quem Somos</a>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#inscricao">Inscrição</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/244923456789" target="_blank" class="whatsapp-float" title="Fala connosco no WhatsApp">💬</a>
+
+<script>
+// ===== API =====
+const API_URL = window.location.origin + '/api/inscricoes'
+let dadosInscricao = null
+
+// ===== FORM SUBMIT =====
+document.getElementById('formInscricao').addEventListener('submit', async function(e) {
+  e.preventDefault()
+  const btn = document.getElementById('btnSubmit')
+  btn.disabled = true
+  btn.textContent = 'A enviar...'
+
+  const form = new FormData(this)
+  const dados = {}
+  form.forEach((v, k) => { if (v) dados[k] = v })
+  dados.origem = 'website'
+
+  if (dados.turnoPreferido) {
+    const turnoLabel = dados.turnoPreferido === 'manha' ? 'Manhã' : 'Tarde'
+    dados.notas = (dados.notas ? dados.notas + '. ' : '') + 'Turno preferido: ' + turnoLabel
+    delete dados.turnoPreferido
+  }
+  if (dados.modalidade) {
+    const modalLabel = dados.modalidade === 'pre-preparatorio' ? 'Pré-Preparatório' : 'Preparatório Intensivo'
+    dados.notas = (dados.notas ? dados.notas + '. ' : '') + 'Modalidade: ' + modalLabel
+  }
+
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    })
+    const result = await res.json()
+    if (res.ok) {
+      dadosInscricao = dados
+      document.getElementById('formInscricao').style.display = 'none'
+      document.getElementById('sucesso').style.display = 'block'
+      window.scrollTo({ top: document.getElementById('inscricao').offsetTop - 80, behavior: 'smooth' })
+    } else {
+      alert(result.erro || 'Erro ao enviar inscrição. Tenta novamente.')
+      btn.disabled = false
+      btn.textContent = 'Enviar Inscrição →'
+    }
+  } catch (err) {
+    alert('Erro de conexão. Verifica a tua internet e tenta novamente.')
+    btn.disabled = false
+    btn.textContent = 'Enviar Inscrição →'
+  }
+})
+
+// ===== DOWNLOAD FICHA =====
+function downloadFicha() {
+  if (!dadosInscricao) return
+  const d = dadosInscricao
+  const dataInsc = new Date().toLocaleDateString('pt-AO')
+  const modalidade = d.modalidade === 'pre-preparatorio' ? 'Pré-Preparatório (10.000 Kz/mês)' : 'Preparatório Intensivo (30.000 Kz)'
+
+  const html = '<!DOCTYPE html><html lang="pt"><head><meta charset="UTF-8"><title>Ficha de Inscrição — ' + (d.nome||'') + '</title>' +
+    '<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Segoe UI,system-ui,sans-serif;padding:40px;color:#1e293b;max-width:800px;margin:0 auto}' +
+    '.header{text-align:center;margin-bottom:32px;padding-bottom:20px;border-bottom:3px solid #991B1B}' +
+    '.logo{font-size:28px;font-weight:800;color:#991B1B}.logo span{font-weight:400;color:#64748b;font-size:16px}' +
+    '.subtitulo{color:#64748b;font-size:14px;margin-top:6px}.titulo-ficha{font-size:20px;font-weight:700;color:#991B1B;margin-top:12px;letter-spacing:1px;text-transform:uppercase}' +
+    '.secao{margin-bottom:24px}.secao-titulo{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:#991B1B;margin-bottom:12px;font-weight:700;padding-bottom:6px;border-bottom:2px solid #e2e8f0}' +
+    '.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}.campo{margin-bottom:8px}' +
+    '.campo-label{font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px}' +
+    '.campo-valor{font-size:15px;font-weight:500;min-height:22px;padding-bottom:4px;border-bottom:1px solid #f1f5f9}' +
+    '.campo-valor.destaque{color:#991B1B;font-weight:700}' +
+    '.rodape{margin-top:40px;padding-top:20px;border-top:2px solid #e2e8f0}' +
+    '.assinatura{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}' +
+    '.assinatura-linha{border-top:1px solid #1e293b;padding-top:6px;text-align:center;font-size:12px;color:#64748b}' +
+    '.rodape-texto{text-align:center;color:#94a3b8;font-size:11px;margin-top:28px}' +
+    '.btn{padding:10px 24px;border:none;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;background:#991B1B;color:#fff;margin:10px auto;display:block}' +
+    '@media print{.no-print{display:none!important}}</style></head><body>' +
+    '<div class="no-print" style="text-align:center;margin-bottom:20px"><button class="btn" onclick="window.print()">Imprimir / Guardar PDF</button></div>' +
+    '<div class="header"><div class="logo">Preparatório <span>MedPremium</span></div>' +
+    '<div class="subtitulo">Curso Preparatório para Ingresso no Ensino Superior</div>' +
+    '<div class="titulo-ficha">Ficha de Inscrição</div></div>' +
+    '<div class="secao"><div class="secao-titulo">Dados Pessoais</div><div class="grid">' +
+    '<div class="campo"><div class="campo-label">Nome Completo</div><div class="campo-valor destaque">' + (d.nome||'—') + '</div></div>' +
+    '<div class="campo"><div class="campo-label">Telefone</div><div class="campo-valor">' + (d.telefone||'—') + '</div></div>' +
+    '<div class="campo"><div class="campo-label">Sexo</div><div class="campo-valor">' + (d.sexo==='M'?'Masculino':d.sexo==='F'?'Feminino':'—') + '</div></div>' +
+    '<div class="campo"><div class="campo-label">Nº BI</div><div class="campo-valor">' + (d.numeroBilhete||'—') + '</div></div>' +
+    '<div class="campo" style="grid-column:1/-1"><div class="campo-label">Morada</div><div class="campo-valor">' + (d.morada||'—') + '</div></div>' +
+    '</div></div>' +
+    '<div class="secao"><div class="secao-titulo">Dados Académicos</div><div class="grid">' +
+    '<div class="campo"><div class="campo-label">Curso do Ensino Médio</div><div class="campo-valor">' + (d.cursoEnsinoMedio||'—') + '</div></div>' +
+    '<div class="campo"><div class="campo-label">Instituição</div><div class="campo-valor">' + (d.instituicaoEnsinoMedio||'—') + '</div></div>' +
+    '<div class="campo"><div class="campo-label">Média</div><div class="campo-valor">' + (d.mediaEnsinoMedio?d.mediaEnsinoMedio+' valores':'—') + '</div></div>' +
+    '<div class="campo"><div class="campo-label">Tentativas</div><div class="campo-valor">' + (d.numTentativas||'0') + '</div></div>' +
+    '<div class="campo" style="grid-column:1/-1"><div class="campo-label">Curso Pretendido</div><div class="campo-valor destaque">' + (d.cursoAlvo||'—') + '</div></div>' +
+    '</div></div>' +
+    '<div class="secao"><div class="secao-titulo">Dados de Inscrição</div><div class="grid">' +
+    '<div class="campo"><div class="campo-label">Data de Inscrição</div><div class="campo-valor">' + dataInsc + '</div></div>' +
+    '<div class="campo"><div class="campo-label">Modalidade</div><div class="campo-valor destaque">' + modalidade + '</div></div>' +
+    '<div class="campo"><div class="campo-label">Inscrição</div><div class="campo-valor">2.000 Kz</div></div>' +
+    '</div></div>' +
+    '<div class="rodape"><div class="assinatura">' +
+    '<div><div class="assinatura-linha">Assinatura do Estudante</div></div>' +
+    '<div><div class="assinatura-linha">Assinatura da Administração</div></div>' +
+    '</div><div class="rodape-texto">Preparatório MedPremium · De estudantes para estudantes, desde 2009 · Ficha gerada em ' + dataInsc + '</div></div>' +
+    '</body></html>'
+
+  const blob = new Blob([html], { type: 'text/html' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = 'Ficha_Inscricao_MedPremium_' + (d.nome||'').replace(/\s+/g, '_') + '.html'
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+  URL.revokeObjectURL(url)
+}
+
+// ===== HEADER SCROLL =====
+const header = document.getElementById('topHeader')
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40)
+})
+
+// ===== SCROLL ANIMATIONS =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('vis') })
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' })
+document.querySelectorAll('.anim').forEach(el => observer.observe(el))
+
+// ===== COUNT UP ANIMATION =====
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target
+      const target = parseInt(el.getAttribute('data-count'))
+      const suffix = el.getAttribute('data-suffix') || ''
+      let current = 0
+      const step = Math.max(1, Math.floor(target / 40))
+      const timer = setInterval(() => {
+        current += step
+        if (current >= target) { current = target; clearInterval(timer) }
+        el.textContent = current + suffix
+      }, 30)
+      countObserver.unobserve(el)
+    }
+  })
+}, { threshold: 0.5 })
+document.querySelectorAll('.stat-num[data-count]').forEach(el => countObserver.observe(el))
+
+// ===== FAQ TOGGLE =====
+function toggleFAQ(btn) {
+  const item = btn.parentElement
+  const wasOpen = item.classList.contains('open')
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'))
+  if (!wasOpen) item.classList.add('open')
+}
+
+// ===== SMOOTH SCROLL =====
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'))
+    if (target) {
+      e.preventDefault()
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' })
+    }
+  })
+})
+
+// ===== MOBILE MENU =====
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open')
+  document.getElementById('hamburgerBtn').classList.toggle('active')
+  document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : ''
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open')
+  document.getElementById('hamburgerBtn').classList.remove('active')
+  document.body.style.overflow = ''
+}
+window.addEventListener('resize', () => { if (window.innerWidth > 640) closeMenu() })
+
+// ===== FORM PROGRESS =====
+const allInputs = document.querySelectorAll('#formInscricao input, #formInscricao select, #formInscricao textarea')
+const progressDots = document.querySelectorAll('.form-progress-dot')
+function updateProgress() {
+  let filled = 0
+  allInputs.forEach(inp => { if (inp.value && inp.value.trim()) filled++ })
+  const dotsToFill = Math.round((filled / allInputs.length) * progressDots.length)
+  progressDots.forEach((dot, i) => dot.classList.toggle('filled', i < dotsToFill))
+}
+allInputs.forEach(inp => { inp.addEventListener('input', updateProgress); inp.addEventListener('change', updateProgress) })
+
+// ===== ACTIVE NAV =====
+const sections = document.querySelectorAll('section[id]')
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY + 120
+  sections.forEach(sec => {
+    const link = document.querySelector('.header-nav a[href="#' + sec.id + '"]')
+    if (link) {
+      const active = scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight
+      link.style.color = active ? '#fff' : ''
+      link.style.background = active ? 'rgba(255,255,255,0.12)' : ''
+    }
+  })
+})
+</script>
+</body>
+</html>
