@@ -1,0 +1,7 @@
+[build]
+  base = "website"
+  publish = "website"
+  command = ""
+
+[context.production]
+  environment = { NODE_ENV = "production" }
