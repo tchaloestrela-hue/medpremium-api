@@ -1,0 +1,35 @@
+{
+  "name": "preparatorio-medpremium",
+  "version": "2.0.0",
+  "private": true,
+  "description": "MedPremium Preparatório — Sistema de Gestão Completo",
+  "main": "server/main.js",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "chart.js": "^4.2.0",
+    "concurrently": "^10.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "pdfkit": "^0.13.0",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.0.0",
+    "react-dom": "^18.2.0",
+    "sqlite3": "^5.1.6",
+    "twilio": "^6.0.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
+  },
+  "scripts": {
+    "start": "concurrently \"vite --port 3001\" \"node server/main.js\"",
+    "dev": "vite --port 3001",
+    "server": "node server/main.js",
+    "build": "vite build",
+    "preview": "vite preview",
+    "install-app": "npm install && npm run build"
+  }
+}

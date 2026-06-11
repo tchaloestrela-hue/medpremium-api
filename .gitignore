@@ -1,2 +1,15 @@
 node_modules/
 dist/
+
+# Segredos e ambiente
+.env
+.env.local
+
+# Base de dados local (no Render usa-se o disco persistente)
+*.db
+server/data/
+
+# Ferramentas
+.claude/
+.netlify/
+nul
